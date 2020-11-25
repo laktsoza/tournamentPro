@@ -9,6 +9,11 @@ header {
     text-align: center;
 }
 
+.table-div table, th, tr {
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
 button {
     border: none;
     border-radius: 5px;

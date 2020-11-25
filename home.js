@@ -5,32 +5,12 @@ const home = document.getElementById('home');
 const history = document.getElementById('history');
 const divForAddTeam = document.getElementById('addTeamDiv')
 
-const tournament = [
-    {
-        Team: '',
-        Games: 0,
-        Goals: 0,
-        Points: 0,
-    },
-    {
-        Team: '',
-        Games: 0,
-        Goals: 0,
-        Points: 0,
-    },
-    {
-        Team: '',
-        Games: 0,
-        Goals: 0,
-        Points: 0,
-    },
-    {
-        Team: '',
-        Games: 0,
-        Goals: 0,
-        Points: 0,
-    },
-]
+
+
+const tournament = [];
+
+ 
+
 
 let start = document.createElement('button');
 let br = document.createElement('br');
