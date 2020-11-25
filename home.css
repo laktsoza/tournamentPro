@@ -9,10 +9,15 @@ header {
     text-align: center;
 }
 
+.show {
+    display: block;
+}
+
 .table-div table, th, tr {
     border: 1px solid black;
     margin: 0 auto;
 }
+
 
 button {
     border: none;
