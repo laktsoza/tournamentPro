@@ -1,0 +1,41 @@
+
+body, header {
+    font-family: sans-serif;
+}
+
+header {
+    background-color: lightgray;
+    padding: 30px;
+    text-align: center;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    margin: 0 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button a {
+    text-decoration: none;
+}
+
+.new-tournament, .addTeamDiv {
+    background-color: lightslategray;
+    padding: 20px;
+    text-align: center;
+}
+
+.new-tournament input {
+    padding: 5px;
+}
+
+.addTeamDiv {
+    padding: 0;
+}
+
+.hide {
+    display: none;
+}
+
