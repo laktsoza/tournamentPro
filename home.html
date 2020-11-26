@@ -11,19 +11,29 @@
     <button id="home"><a href="history.html">HISTORY</a></button>
 </header>
 <body>
-    <div class="table-div" id="table-div">
-        <table class="hide">
+    <div class="table-div hide" id="table-div">
+        <table>
             <thead>
                 <tr>
-                    <th>Team</th>
-                    <th>Games</th>
-                    <th>Goals</th>
-                    <th>Points</th>
+                    <th class="th">Team</th>
+                    <th class="th">Games</th>
+                    <th class="th">Goals</th>
+                    <th class="th">Points</th>
                 </tr>
             </thead>
             <tbody id="table-body"></tbody>
         </table>
+        <div class="bla">
+            <select name="team1" id="team1">
+                <option value="0">Choose Team</option>
+            </select>
+            <select name="team2" id="team2">
+                <option value="0">Choose Team</option>
+            </select>
+                
+        </div>
     </div>
+    
         
     <div class="new-tournament">
         <button id="new-tournament">New Tournament</button>

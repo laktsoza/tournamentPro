@@ -7,9 +7,21 @@ const divForAddTeam = document.getElementById('addTeamDiv');
 const divForTable = document.getElementById('table-div');
 const tableBody = document.getElementById('table-body');
 const trForTbody = document.createElement('tr');
+const thInThead = document.querySelectorAll('.th');
+
+const select1 = document.getElementById('team1');
+const select2 = document.getElementById('team2');
 
 
-const tournament = [];
+const tournament = [
+    {
+        Team: '',
+        Games: 0,
+        Goals: 0,
+        Points: 0,
+    }
+];
+
 let numberInputs = [];
 const inputValues = [];
 
@@ -34,7 +46,6 @@ function hide() {
     divForAddTeam.appendChild(addTeam);
 }
 
-newTournament.addEventListener('click', hide);
 
 function addInput() {
     let inpTeam = document.createElement('input');
@@ -48,23 +59,57 @@ function addInput() {
 
 function editTable() {
     numberInputs.forEach(a => inputValues.push(a.value));
-    for(let i = 0; i < inputValues.length; i++) {
-        let trForBody = document.createElement('tr');
-        for(let k = 0; k < 4; k++) {
-            let tdForTr = document.createElement('td');
-            trForBody.appendChild(tdForTr);
-            tdForTr.textContent = 0;
-        }
 
-        tableBody.appendChild(trForBody);
-        trForBody.firstElementChild.textContent = inputValues[i];
-        newTournamentDiv.classList = 'hide';
-        divForAddTeam.classList = 'hide';
-        divForTable.classList = 'show';
+    for(let i = 0; i < inputValues.length; i++) {
+        if(inputValues[i] !== '') {
+            let trForBody = document.createElement('tr');
+            for(let k = 0; k < 4; k++) {
+                let tdForTr = document.createElement('td');
+                trForBody.appendChild(tdForTr);
+                tdForTr.textContent = 0;
+            }
+            trForBody.lastElementChild.classList = 'blue';
+            tableBody.appendChild(trForBody);          
+            trForBody.firstElementChild.textContent = inputValues[i];
+            trForBody.firstElementChild.classList = 'team-names';
+            let opt1 = document.createElement('option');
+            select1.appendChild(opt1);
+            opt1.textContent = inputValues[i];
+            let opt2 = document.createElement('option');          
+            select2.appendChild(opt2);
+            opt2.textContent = inputValues[i];
+            newTournamentDiv.classList = 'hide';
+            divForAddTeam.classList = 'hide';
+            divForTable.classList = 'table-div';
+        } 
     }  
 }
 
-addTeam.addEventListener('click', addInput);
 
+
+            
+
+
+
+addTeam.addEventListener('click', addInput);
+newTournament.addEventListener('click', hide);
 start.addEventListener('click', editTable);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

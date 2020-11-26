@@ -1,6 +1,6 @@
 
 body, header {
-    font-family: sans-serif;
+    font-family: Calibri;
 }
 
 header {
@@ -13,9 +13,10 @@ header {
     display: block;
 }
 
-.table-div table, th, tr {
+.table-div table, th, tr, td {
     border: 1px solid black;
     margin: 0 auto;
+    text-align: center;
 }
 
 
@@ -49,3 +50,12 @@ button a {
     display: none;
 }
 
+.bla {
+    text-align: center;
+    height: 50px;
+    padding: 20px;
+}
+
+.blue {
+    background-color: blue;
+}
