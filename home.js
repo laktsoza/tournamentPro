@@ -6,24 +6,25 @@ const history = document.getElementById('history');
 const divForAddTeam = document.getElementById('addTeamDiv');
 const divForTable = document.getElementById('table-div');
 const tableBody = document.getElementById('table-body');
+
 const trForTbody = document.createElement('tr');
-const thInThead = document.querySelectorAll('.th');
 
 const select1 = document.getElementById('team1');
 const select2 = document.getElementById('team2');
 
+const shot1 = document.getElementById('shot1');
+const shot2 = document.getElementById('shot2');
+const playBtn = document.getElementById('play');
 
-const tournament = [
-    {
-        Team: '',
-        Games: 0,
-        Goals: 0,
-        Points: 0,
-    }
-];
 
-let numberInputs = [];
+const tournament = [];
+
 const inputValues = [];
+const optArr1 = [];
+const optArr2 = [];
+
+let arrElements = [];
+let numberInputs = [];
 
 
 let start = document.createElement('button');
@@ -37,7 +38,6 @@ addTeam.style.margin = '0 0 20px 0';
 addTeam.textContent = 'Add Team';
 
 
-let arrElements = [];
 arrElements.push(start, br, br1);
 
 function hide() {
@@ -63,21 +63,25 @@ function editTable() {
     for(let i = 0; i < inputValues.length; i++) {
         if(inputValues[i] !== '') {
             let trForBody = document.createElement('tr');
+
+                let obj = {Team: inputValues[i], Games: 0, Goals: 0, Points: 0};
+                tournament.push(obj);
+            
             for(let k = 0; k < 4; k++) {
                 let tdForTr = document.createElement('td');
                 trForBody.appendChild(tdForTr);
-                tdForTr.textContent = 0;
+                tdForTr.textContent = Object.values(obj)[k];
             }
-            trForBody.lastElementChild.classList = 'blue';
+
             tableBody.appendChild(trForBody);          
-            trForBody.firstElementChild.textContent = inputValues[i];
-            trForBody.firstElementChild.classList = 'team-names';
             let opt1 = document.createElement('option');
             select1.appendChild(opt1);
             opt1.textContent = inputValues[i];
             let opt2 = document.createElement('option');          
             select2.appendChild(opt2);
             opt2.textContent = inputValues[i];
+            optArr1.push(opt1.value);
+            optArr2.push(opt2.value);
             newTournamentDiv.classList = 'hide';
             divForAddTeam.classList = 'hide';
             divForTable.classList = 'table-div';
@@ -86,24 +90,15 @@ function editTable() {
 }
 
 
-
-            
-
+function playMatch() {
+    console.log(tournament); 
+}
 
 
 addTeam.addEventListener('click', addInput);
 newTournament.addEventListener('click', hide);
 start.addEventListener('click', editTable);
-
-
-
-
-
-
-
-
-
-
+playBtn.addEventListener('click', playMatch);
 
 
 

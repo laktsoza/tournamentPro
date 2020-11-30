@@ -19,6 +19,19 @@ header {
     text-align: center;
 }
 
+.table-div table {
+    border-collapse: collapse;
+    margin: 25px auto;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.table-div table thead tr {
+    background-color: lightseagreen;
+    color: #ffffff;
+    text-align: left;
+}
 
 button {
     border: none;
@@ -50,10 +63,17 @@ button a {
     display: none;
 }
 
-.bla {
+.for-select {
     text-align: center;
-    height: 50px;
     padding: 20px;
+}
+
+.check-shot {
+    text-align: center;
+}
+
+.for-select input {
+    width: 30px;
 }
 
 .blue {
